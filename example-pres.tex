@@ -9,13 +9,14 @@
 \usepackage{enumerate,graphicx}
 
 % Load Them
-\usetheme[footline=true, slogan=false]{UzL}
+\usetheme[footline=true, slogan=false, hideallsubsections]{UzL}
 %
 \setbeamertemplate{navigation symbols}{}
 \title{Beispielpräsentation}
 \subtitle{Eines Vortrages im neuen Design mit \LaTeX}
 \date[]{5. Februar 2011\\[1ex] Workshop on Corporate Design Stuff}
 \author[R. Bergmann]{Ronny Bergmann}
+\setlogo{1}{.25\textwidth}{logos/mathlogo300dpi.png}
 \institute[Universität zu Lübeck]{Institut für Mathematik\\Universität zu Lübeck}
 \begin{document}
 
@@ -25,7 +26,7 @@
 	\begin{frame}{}
 		\tableofcontents
 	\end{frame}
-	
+	\subsection{A}
 	\begin{frame}{Einleitung - Motivation}
 	ABC
 	\begin{lemma}[Ein Beispiellemma]
@@ -37,6 +38,7 @@
 	\alert{ACHTUNG!}
 		Etwas Hervorgehobenes. Die Farben sind bisher alle dem Handbuch zum Corporate Design entnommen.
 	\end{frame}
+	\subsection{B}
 	\begin{frame}{Ein Beweis}{Mit Untertitel}
 			\begin{proof}
 				Weil.
