@@ -1,4 +1,4 @@
-\documentclass[german,10pt,xcolor=colortbl
+\documentclass[german,10pt,xcolor=colortbl,compress
 %,draft
 ]{beamer}
 \usepackage{xunicode}
@@ -9,19 +9,25 @@
 \usepackage{enumerate,graphicx}
 
 % Load Them
-\usetheme[footline=true, slogan=false, hideallsubsections]{UzL}
+\usetheme[footline=true, slogan=false, navigation=true,ITMtheme]{UzL}
 %
 \setbeamertemplate{navigation symbols}{}
 \title{Beispielpräsentation}
 \subtitle{Eines Vortrages im neuen Design mit \LaTeX}
 \date[]{5. Februar 2011\\[1ex] Workshop on Corporate Design Stuff}
 \author[R. Bergmann]{Ronny Bergmann}
-\setlogo{1}{.25\textwidth}{logos/mathlogo300dpi.png}
+% Clear Logo 1 to make the head smaller
+%\clearlogo{1}
 \institute[Universität zu Lübeck]{Institut für Mathematik\\Universität zu Lübeck}
 \begin{document}
-
+	{%in brackets to keep changes local
+	\setbeamercolor{background canvas}{bg=black}
+	\setbeamercolor{text-color}{fg=white}
+	\begin{frame}[plain]{}{}%Ohne Titel und Untertitel damits ganz leer und weiß ist
+		\color{white}\small .
+	\end{frame}
+	}
 	\maketitle	
-
 	\section{Einleitung}
 	\begin{frame}{}
 		\tableofcontents
@@ -44,6 +50,10 @@
 				Weil.
 			\end{proof}
 	\end{frame}
+	\begin{frame}[plain]{}{}%Ohne Titel und Untertitel damits ganz leer und weiß ist
+		Ich bin so ein leerer Frame
+	\end{frame}
+	
 	\begin{frame}{TODO}
 		\begin{itemize}
 			\item Literatur?

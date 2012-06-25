@@ -157,9 +157,14 @@
 		\fi
 }
 \newcommand{\clearlogo}[1]{%
-	\if\value{UzLlogonum}=#1
-	\setcounter{UzL@logonum}{\value{UzL@logonum} - 1}%
+	\ifnum\value{UzL@logonum}=#1
+	 \addtocounter{UzL@logonum}{-1}
 	\fi%
+	\ifnum\value{UzL@logonum}=0
+		\setlength{\UzL@headheight}{.025\paperheight}
+	\else
+		\setlength{\UzL@headheight}{.1\paperheight}
+	\fi
 	\ifcase #1 %0 clear specific image
 	\PackageError{beamerthemeUzL}{A Logo 0 can't be deleted.}{The Logo index should be between including 1 and 3.}
 		\or %1
