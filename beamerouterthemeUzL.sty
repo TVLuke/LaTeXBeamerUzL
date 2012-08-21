@@ -30,9 +30,11 @@
 			\end{beamercolorbox}
 		\else
 			\hspace{-.006\paperwidth} %hack :(
+			\vspace{-.5\baselineskip}
 			\begin{beamercolorbox}[wd=.33\UzL@innerwidth,ht=\UzL@headheight,vmode,left]{}
 				\ifUzL@logoOneused\pgfuseimage{UzLlogo1}\fi%
 			\end{beamercolorbox}\hspace{-0.1pt}%Hacked up to now
+			\vspace{.5\baselineskip}
 			\begin{beamercolorbox}[wd=.67\UzL@innerwidth,ht=\UzL@headheight,vmode,left]{}
 				\insertnavigation{.67\UzL@innerwidth}
 			\end{beamercolorbox}
@@ -40,10 +42,15 @@
 	\else % Never display navigation
 	\ifcase \value{UzL@logonum} %depending on the number of logos
 		%Zero Logos
+		\begin{beamercolorbox}[wd=.\UzL@innerwidth,ht=\UzL@headheight,vmode,left]{}
+		\end{beamercolorbox}		
 		\or %1 Logo
-		\begin{beamercolorbox}[wd=.5\UzL@innerwidth,ht=\UzL@headheight,vmode,left]{}
+		\begin{beamercolorbox}[wd=.33\UzL@innerwidth,ht=\UzL@headheight,vmode,left]{}
 	  		\ifUzL@logoOneused\pgfuseimage{UzLlogo1}\fi
   		\end{beamercolorbox}
+		\begin{beamercolorbox}[wd=.67\UzL@innerwidth,ht=\UzL@headheight,vmode,left]{}
+			\ 
+		\end{beamercolorbox}
 		\or %2 logos
 		\begin{beamercolorbox}[wd=.5\UzL@innerwidth,ht=\UzL@headheight,vmode,left]{}
 	  		\ifUzL@logoOneused\pgfuseimage{UzLlogo1}\fi
@@ -135,12 +142,9 @@ Missing Logo: File logo/unilogo300dpi.png not found!}{}
 \vspace{-.835\paperheight}
 \fi
 }
-\defbeamertemplate*{headline}{UzL} 
-{ 
-\leavevmode
-\vskip.5\baselineskip
-\hspace{.02\paperwidth}
-		% Header Output
+\defbeamertemplate*{headline}{UzL}{%\leavevmode
+\vskip.5\baselineskip%
+\hspace{.02\paperwidth}% Header Output
 		\ifUzL@displayNavigation%
 			\UzL@LogoColumnOutput{N}%
 		\else%
@@ -161,10 +165,8 @@ Missing Logo: File logo/unilogo300dpi.png not found!}{}
 %
 \defbeamertemplate{footline}{UzLplain}{}
 
-\defbeamertemplate{headline}{UzLplain} 
-{ 
-\leavevmode
-\vskip.5\baselineskip
+\defbeamertemplate{headline}{UzLplain}{\leavevmode%
+\vskip.5\baselineskip%
 \hspace{.02\paperwidth}
 	\UzL@LogoColumnOutput{}%
 		\strut
